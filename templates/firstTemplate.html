@@ -1,0 +1,51 @@
+<div id="window" ng-if="main.checker">
+    <div class="window__text">
+        <div>Enter login:
+            <input type="text" mg-model="main.log" size=10 > </div>
+        <div>Enter password:
+            <input type="password" size=10 ng-model="main.pass"> </div>
+        <div class='checktext'>
+            <input type="checkbox" ng-click='main.addUser()'>Remember me!!!</div>
+        <div class='butt'>
+            <input type="button" value="Enter" ng-click='main.Click()'>
+            <input type="button" value="ForgotPass" ng-click='main.Forgot()'> </div>
+        <div class="errorSt">{{main.error}}</div>
+        <div>
+            <input type="button" value="Close" ng-click="main.hideBox()" id="butClose"> </div>
+    </div>
+</div>
+<div class="main">
+    <input type="text" value="Hello" size="60">
+    <div>Topic</div>
+    <div>
+        <input type="text" ng-model="main.topic" size="60"> </div>
+    <div>Message</div>
+    <div>
+        <textarea name="" ng-model="main.mess" id="" cols="60" rows="10"></textarea>
+    </div>
+    <div>
+        <input type="button" id='add' value='Send' ng-click="main.addTopic()"> </div>
+    <div ng-repeat="theems in main.theem">
+        <div class="block">
+            <div class="topBlock">
+                <div class='text'>{{theems.topic}} </div>
+                <div class="smalltext">Post by {{main.guest}} {{main.date}}</div>
+                <div>
+                    <input type="button" id='change' value='change' ng-click="main.changeFriends()">
+                    <input type="button" id='remove' value='remove' ng-click="main.remove(text)"> </div>
+            </div>
+            <div id='botBlock'>
+                <div class="text">{{theems.mess}} </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="change" ng-if="main.showblock">
+    <div class="change__text">
+        <div>Topic:
+            <input type="text" ng-model="main.changeFriend.mess" size=10 class=""> </div>
+        <div>Enter message:
+            <textarea name="" ng-model="main.changeFriend.topic" id="" cols="30" rows="10"></textarea>
+        </div>
+        <input type="button" value="Change" ng-click="main.changeUsers()" id="butForgot"> </div>
+</div>
